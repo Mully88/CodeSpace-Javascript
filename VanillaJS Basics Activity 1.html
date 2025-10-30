@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vanilla JS Activity 1</title>
+</head>
+
+<body>
+
+    <h1>JavaScript Operation Results</h1>
+    <ul id="results"></ul>
+
+    <script>
+        const results = [
+            `a. -5 + 8 * 6 = ${-5 + 8 * 6}`, // 43
+            `b. (55 + 9) % 9 = ${(55 + 9) % 9}`, //1
+            `c. 20 + -3 * 5 / 8 = ${20 + -3 * 5 / 8}`,  // 18.125
+            `d. 5 + 15 / 3 * 2 - 8 % 3 = ${5 + 15 / 3 * 2 - 8 % 3}` // 13
+        ];
+
+        const list = document.getElementById("results");
+        results.forEach(result => {
+            const li = document.createElement("li");
+            li.textContent = result;
+            list.appendChild(li);
+        });
+    </script>
+
+
+
+
+
+</body>
+
+</html>
