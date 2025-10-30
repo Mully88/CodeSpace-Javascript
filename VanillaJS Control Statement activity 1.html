@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Number Equality Checker</title>
+</head>
+<body>
+  <h1>Check Equality of Three Numbers</h1>
+
+  <!-- Input fields for the three numbers -->
+  <label for="num1">Enter first number:</label>
+  <input type="number" id="num1" /><br><br>
+
+  <label for="num2">Enter second number:</label>
+  <input type="number" id="num2" /><br><br>
+
+  <label for="num3">Enter third number:</label>
+  <input type="number" id="num3" /><br><br>
+
+  <!-- Button to trigger the check -->
+  <button onclick="checkNumbers()">Check</button>
+
+  <!-- Paragraph to display the result -->
+  <p id="result"></p>
+
+  <script>
+    // This function runs when the button is clicked
+    function checkNumbers() {
+      // Get values from input fields and convert to numbers
+      const num1 = parseFloat(document.getElementById("num1").value);
+      const num2 = parseFloat(document.getElementById("num2").value);
+      const num3 = parseFloat(document.getElementById("num3").value);
+
+      // Get the result paragraph element
+      const resultElement = document.getElementById("result");
+
+      // Check if all three numbers are equal
+      if (num1 === num2 && num2 === num3) {
+        resultElement.textContent = "All numbers are equal.";
+      }
+      // Check if all three numbers are different
+      else if (num1 !== num2 && num1 !== num3 && num2 !== num3) {
+        resultElement.textContent = "All numbers are different.";
+      }
+      // If neither condition is true, then some numbers match but not all
+      else {
+        resultElement.textContent = "Neither all are equal or different.";
+      }
+    }
+  </script>
+</body>
+</html>
