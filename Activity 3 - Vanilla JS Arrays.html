@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Define the sample array
+let numbers = [25, 14, 56, 15, 36, 56, 77, 18, 29, 49];
+
+// Display the original array
+console.log("Original Array:", numbers);
+
+// Use Math.max and Math.min with the spread operator to find max and min
+let maxValue = Math.max(...numbers); // Finds the largest number
+let minValue = Math.min(...numbers); // Finds the smallest number
+
+// Display the results
+console.log("Maximum value for the above array = " + maxValue);
+console.log("Minimum value for the above array = " + minValue);
+
+    </script>
+</body>
+</html>

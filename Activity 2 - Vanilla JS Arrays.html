@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Define the sample array
+let numbers = [20, 30, 25, 35, -16, 60, -100];
+
+// Initialize a variable to hold the sum of the elements
+let sum = 0;
+
+// Loop through the array to calculate the total sum
+for (let i = 0; i < numbers.length; i++) {
+  sum += numbers[i]; // Add each element to the sum
+}
+
+// Calculate the average by dividing the sum by the number of elements
+let average = sum / numbers.length;
+
+// Round the average to one decimal place
+let roundedAverage = average.toFixed(1);
+
+// Display the result
+console.log("Average value of the array elements is : " + roundedAverage);
+
+    </script>
+</body>
+</html>
