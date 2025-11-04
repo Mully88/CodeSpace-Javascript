@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Multiplication Table From 1 to 10</h1>
+
+
+  <!-- Input field for the number -->
+  <label for="numberInput">Enter a number:</label>
+  <input type="number" id="numberInput" />
+
+  <!-- Button to trigger the table generation -->
+  <button onclick="generateTable()">Generate Table</button>
+
+  <!-- Area to display the output -->
+  <div id="output"></div>
+
+  <script>
+    // Function to generate and display the multiplication table
+    function generateTable() {
+      // Get the number from the input field
+      let number = parseInt(document.getElementById("numberInput").value);
+
+      // Get the output container
+      let outputDiv = document.getElementById("output");
+
+      // Clear previous output
+      outputDiv.innerHTML = "";
+
+      // Check if the input is a valid number
+      if (!isNaN(number)) {
+        // Loop from 1 to 10
+        for (let i = 1; i <= 10; i++) {
+          // Calculate the result
+          let result = number * i;
+
+          // Create a paragraph element for each line
+          let line = document.createElement("p");
+          line.textContent = `${number} x ${i} = ${result}`;
+
+          // Add the line to the output container
+          outputDiv.appendChild(line);
+        }
+      } else {
+        // Show error message if input is invalid
+        outputDiv.textContent = "Please enter a valid number.";
+      }
+    }
+  </script>
+
+</body>
+</html>
