@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity 2 - Vanilla JS Functions</title>
+</head>
+<body>
+    <script>
+        // Function to calculate the factorial of a number
+function calculateFactorial(n) {
+  // Check if the input is a non-negative integer
+  if (n < 0) {
+    // Factorial is not defined for negative numbers
+    return "Factorial is not defined for negative numbers.";
+  }
+
+  // Factorial of 0 is defined as 1
+  if (n === 0) {
+    return 1;
+  }
+
+  // Initialize result to 1
+  let result = 1;
+
+  // Multiply result by each number from 1 to n
+  for (let i = 1; i <= n; i++) {
+    result *= i;
+  }
+
+  // Return the final factorial value
+  return result;
+}
+
+// Example usage:
+let number = 6;
+console.log("Factorial of " + number + " is: " + calculateFactorial(number));
+
+    </script>
+</body>
+</html>

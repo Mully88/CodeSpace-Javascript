@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity 3 - Vanilla JS Functions</title>
+</head>
+<body>
+      <h2>Check if a Number is Prime</h2>
+
+  <!-- Input field for the number -->
+  <label for="numberInput">Enter a number:</label>
+  <input type="number" id="numberInput" />
+
+  <!-- Button to trigger the check -->
+  <button onclick="checkPrime()">Check</button>
+
+  <!-- Area to display the result -->
+  <div id="result"></div>
+
+  <script>
+    // Function to check if a number is prime
+    function isPrime(number) {
+      // Prime numbers must be greater than 1
+      if (number <= 1) {
+        return false;
+      }
+
+      // Check for divisibility from 2 up to the square root of the number
+      for (let i = 2; i <= Math.sqrt(number); i++) {
+        if (number % i === 0) {
+          return false; // Not prime if divisible
+        }
+      }
+
+      return true; // Prime if no divisors found
+    }
+
+    // Function to handle user input and display result
+    function checkPrime() {
+      // Get the input value
+      let input = parseInt(document.getElementById("numberInput").value);
+
+      // Get the result container
+      let resultDiv = document.getElementById("result");
+
+      // Validate input
+      if (isNaN(input)) {
+        resultDiv.textContent = "Please enter a valid number.";
+        return;
+      }
+
+      // Check if the number is prime and display the result
+      if (isPrime(input)) {
+        resultDiv.textContent = input + " is a prime number.";
+      } else {
+        resultDiv.textContent = input + " is not a prime number.";
+      }
+    }
+    </script>
+</body>
+</html>

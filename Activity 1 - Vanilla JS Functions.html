@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity 1 - Vanilla JS Functions</title>
+</head>
+<body>
+    <script>
+        // Define the sample array
+let sampleArray = [10, 2, 3, 4, 7];
+
+// Function to display the array content
+function showArrayContent(arr) {
+  // Log the array to the console
+  console.log("The content of the array is:", arr);
+}
+
+// Function to find the maximum value in the array
+function findMaxValue(arr) {
+  // Use Math.max with the spread operator to find the max
+  let max = Math.max(...arr);
+
+  // Log the maximum value
+  console.log("The max value in the array is:", max);
+}
+
+// Call both functions with the sample array
+showArrayContent(sampleArray);
+findMaxValue(sampleArray);
+
+    </script>
+</body>
+</html>
