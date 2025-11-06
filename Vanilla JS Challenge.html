@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Rock, Paper, Scissors Game</title>
+    <style>
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Choose your move:</h2>
+
+    <!-- Buttons for user choices -->
+    <button id="rock">Rock</button>
+    <button id="paper">Paper</button>
+    <button id="scissors">Scissors</button>
+
+    <!-- ✅ Reset button added -->
+    <button id="reset">Reset</button>
+
+
+    <!-- Display result -->
+    <div id="result"></div>
+
+    <script>
+        // Define possible choices
+        const choices = ["rock", "paper", "scissors"];
+
+        // Get all buttons using querySelectorAll
+        const buttons = document.querySelectorAll("button");
+
+        // Add event listeners to each button
+        buttons.forEach(button => {
+            button.addEventListener("click", () => {
+                // Get user's choice from button ID
+                const userChoice = button.id;
+
+                // Generate computer's random choice
+                const computerChoice = choices[Math.floor(Math.random() * choices.length)];
+
+                // Determine the winner
+                const result = getWinner(userChoice, computerChoice);
+
+                // Display result
+                document.getElementById("result").textContent =
+                    `You chose ${userChoice}. Computer chose ${computerChoice}. ${result}`;
+            });
+        });// ✅ Add event listener to reset button
+        document.getElementById("reset").addEventListener("click", () => {
+            // ✅ Clear the result display
+            document.getElementById("result").textContent = "";
+        });
+
+
+
+
+        // Function to determine winner
+        function getWinner(user, computer) {
+            if (user === computer) {
+                return "It's a draw!";
+            }
+
+            // Winning conditions
+            if (
+                (user === "rock" && computer === "scissors") ||
+                (user === "paper" && computer === "rock") ||
+                (user === "scissors" && computer === "paper")
+            ) {
+                return "You win!";
+            } else {
+                return "Computer wins!";
+            }
+        }
+    </script>
+</body>
+
+</html>
